@@ -4,7 +4,7 @@ class sudo::params (
   $requiretty = false,
   $extra_path = undef,
   $extra_shells = undef,
-  $sudo_fullaccess_group = $::operatingsystem ? {
+  $sudo_fullaccess_group = $::facts["operatingsystem"] ? {
     default  => 'wheel',
     'Debian' => 'adm',
     'Ubuntu' => 'admin'
